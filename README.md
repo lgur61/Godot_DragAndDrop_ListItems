@@ -2,8 +2,8 @@
 
 This project is a Godot-based drag-and-drop list items demonstration. It allows users to drag items within a list, rearranging them dynamically, with visual feedback provided during the drag operation.
 
-<video src="./demo_recording.mp4" width="320" height="240" controls></video>
 
+https://github.com/lgur61/Godot_DragAndDrop_ListItems/blob/main/demo_recording.mp4
 
 ## Features
 
