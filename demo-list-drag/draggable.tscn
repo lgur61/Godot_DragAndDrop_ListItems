@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs13h5g1m1lgh"]
+
+[ext_resource type="FontFile" uid="uid://c35dgr5vplrpp" path="res://Cabin-VariableFont_wdth,wght.ttf" id="1"]
+[ext_resource type="Script" path="res://demo-list-drag/draggable_item.gd" id="1_8inmr"]
+
+[sub_resource type="FontFile" id="6"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="Draggable" type="Panel"]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 210.0
+offset_bottom = 50.0
+script = ExtResource("1_8inmr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemCheckBox" type="CheckBox" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+text = "Item Name"
+
+[node name="DragLabel" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = SubResource("6")
+text = "Drag  Me"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="toggled" from="HBoxContainer/ItemCheckBox" to="." method="_on_item_check_box_toggled"]
